@@ -103,6 +103,29 @@ Project_name 项目名称
     - anto_now_add 新增时自动创建时间
     - auto_now 更新时自动创建时间
 
+#### 数据库orm操作 增删改查
+# 增
+models.User.objects.create(name='qianxiaohu',age=18) # 第一种
+dic = {'name': 'xx', 'age': 19}                      # 第二种
+models.User.objects.create(**dic)    # **dic
+obj = models.User(name='xiao',age=18)                # 第三种
+obj.save()
+# 删
+models.User.objects.filter(id=1).delete()
+# 改
+models.User.objects.filter(id__gt=1).update(name='alex',age=84)
+dic = {'name': 'xx', 'age': 19}
+models.User.objects.filter(id__gt=1).update(**dic)
+# 查
+models.User.objects.filter(id=1,name='root')
+models.User.objects.filter(id__gt=1,name='root')# 大于
+models.User.objects.filter(id__lt=1)            # 小于
+models.User.objects.filter(id__gte=1)           # 大于等于
+models.User.objects.filter(id__lte=1)           # 小于等于
+
+models.User.objects.filter(id=1,name='root')
+dic = {'name': 'xx', 'age__gt': 19}
+models.User.objects.filter(**dic)  # 这里也可以传字典，增删改查都可以加字典
     
 ##### 数据新增
 ```
