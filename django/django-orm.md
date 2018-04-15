@@ -1,5 +1,28 @@
 ### Django
 
+#### models 外键关联处理
+```
+class BuildingLists(models.Model):
+    BuildingID = models.CharField(max_length=40, default='0')
+    OwnerID = models.CharField(max_length=200, default='undifined')
+    BuildingStatusID = models.CharField(max_length=200, default='undifined')
+    PlayerID = models.ForeignKey(to="PlayerLists", to_field='PlayerID', **on_delete=models.CASCADE, default='0'**)
+# 作为外键时 必须有删除条件和默认值
+
+    def __str__(self):
+        return '||BuildingID:%s | OwnerID:%s| BuildingStatusID:%s||' \
+               % (self.BuildingID, self.OwnerID, self.BuildingStatusID)
+
+
+class PlayerLists(models.Model):
+    PlayerID = models.CharField(max_length=40, default='0', **unique=True**, null=False)
+# unique=True 作为外键时必须唯一
+    Name = models.CharField(max_length=200, default='undifined')
+    CreateTime = models.DateTimeField(auto_now_add=True)
+
+```
+
+
 ####django orm示例
 ```
 class Business(models.Model):
