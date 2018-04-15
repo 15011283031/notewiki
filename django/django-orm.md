@@ -1,6 +1,11 @@
 ### Django
 
 #### models 外键关联处理
+查找外键:成功
+```
+buildings2 = models.BuildingLists.objects.get(BuildingID='1').PlayerID
+```
+参考：
 ```
 class BuildingLists(models.Model):
     BuildingID = models.CharField(max_length=40, default='0')
@@ -30,6 +35,7 @@ u1.save()
 普通数据项：直接插入
 外键数据项：先获取要插入的外键，然后和普通想一起插入
 多对多数据项：获取要插入的多对多数据项，待表中普通数据项和外键数据项save后，使用.add方法加入
+
 
 ```
 
