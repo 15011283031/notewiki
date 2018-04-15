@@ -61,11 +61,17 @@ models.User.objects.create(name='qianxiaohu',age=18) # 第一种
 dic = {'name': 'xx', 'age': 19}                      # 第二种
 models.User.objects.create(**dic)    # **dic
 obj = models.User(name='xiao',age=18)                # 第三种
+# 第四种
+dic = {"username":'eric',"password":'123'}
+models.UserInfo.objects.create(**dic)
+
 obj.save()
 # 删
 models.User.objects.filter(id=1).delete()
+models.UserInfo.obejcts.filter(username='alex').delete()
 # 改
 models.User.objects.filter(id__gt=1).update(name='alex',age=84)
+models.UserInfo.objects.all().update(age=18)
 dic = {'name': 'xx', 'age': 19}
 models.User.objects.filter(id__gt=1).update(**dic)
 # 查
@@ -74,34 +80,15 @@ models.User.objects.filter(id__gt=1,name='root')# 大于
 models.User.objects.filter(id__lt=1)            # 小于
 models.User.objects.filter(id__gte=1)           # 大于等于
 models.User.objects.filter(id__lte=1)           # 小于等于
+models.User.objects.all()
+models.User.objects.last()
+models.UserInfo.objects.filter(age=18)
+models.UserInfo.objects.filter(age=18).first()
 
 models.User.objects.filter(id=1,name='root')
 dic = {'name': 'xx', 'age__gt': 19}
 models.User.objects.filter(**dic)  # 这里也可以传字典，增删改查都可以加字典
 ```   
-
-##### 数据新增
-```
-dic = {"username":'eric',"password":'123'}
-models.UserInfo.objects.create(**dic)
-```
-
-##### 数据删除
-```
-models.UserInfo.obejcts.filter(username='alex').delete()
-```
-
-##### 数据修改
-```
-models.UserInfo.objects.all().update(age=18)
-```
-
-##### 数据查找
-```
-models.UserInfo.objects.all()
-models.UserInfo.objects.filter(age=18)
-models.UserInfo.objects.filter(age=18).first()
-```
 
 
 
