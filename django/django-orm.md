@@ -1,4 +1,6 @@
+
 ### Django
+
 #### Django安装
 ```
 x-shell
@@ -9,6 +11,7 @@ pip install d:\Django-1.11.2.tar.gz
 pip install Django
 
 ```
+
 #### Django 目录结构
 
 ```   
@@ -48,6 +51,7 @@ Project_name 项目名称
             ---urls.py
         ```
         - project_name url: url(r'^app01/$', include("app01.urls"))
+
 #### 字段属性
 
 - 创建时间
@@ -61,14 +65,17 @@ Project_name 项目名称
 dic = {"username":'eric',"password":'123'}
 models.UserInfo.objects.create(**dic)
 ```
+
 ##### 数据删除
 ```
 models.UserInfo.obejcts.filter(username='alex').delete()
 ```
+
 ##### 数据修改
 ```
 models.UserInfo.objects.all().update(age=18)
 ```
+
 ##### 数据查找
 ```
 models.UserInfo.objects.all()
@@ -79,6 +86,7 @@ models.UserInfo.objects.filter(age=18).first()
 
 
 #### 数据库操作
+
 ##### 创建类
 ```
 class EX_SourceSetting(models.Model):
@@ -87,9 +95,11 @@ class EX_SourceSetting(models.Model):
     source_col_name = models.CharField(max_length=40)
     source_version_name = models.CharField(max_length=40)
 ```
+
 ##### 使用命令根据类创建表
         - python manage.py makemigrations # 生成配置文件
         - python manage.py migrate       # 根据配置文件创建数据库相关
+
 
 ##### 当需要进行POST操作时需要关闭该安全规则
 ```
@@ -103,12 +113,14 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 ```
+
 #### 外部Python文件调用django mode
 1. 需要首先配置django的默认app以及设置
     - import os, django
     - os.environ['DJANGO_SETTINGS_MODULE'] ='HRA.settings'
 2. 然后启动django
     - django.setup() 
+
 
 
 #### Django配置
@@ -168,11 +180,13 @@ ALLOWED_HOSTS = ["127.0.0.1","Peter"]
     - kwargs: 视图使用的字典类型的参数。
     - name: 用来反向获取 URL。
 
+
 #### Django 依赖数据库
     - 数据库配置在 settings 中
     - 生成数据库表的操作
         - python manage.py makemirations # 生成配置文件
         - python manage.py migrate       # 根据配置文件创建数据库相关
+
 
 #### Django admin 后台启动
 1. python manage.py createsuperuser      # 创建超级用户
@@ -187,6 +201,7 @@ ALLOWED_HOSTS = ["127.0.0.1","Peter"]
  mysql -hlocalhost -uroot -p
  1qaz2wsx
 ```
+
 #### Django 创建mysql 数据库连接
 1. 导出所有数据
 ```
