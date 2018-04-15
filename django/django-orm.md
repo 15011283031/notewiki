@@ -104,6 +104,7 @@ Project_name 项目名称
     - auto_now 更新时自动创建时间
 
 #### 数据库orm操作 增删改查
+```
 # 增
 models.User.objects.create(name='qianxiaohu',age=18) # 第一种
 dic = {'name': 'xx', 'age': 19}                      # 第二种
@@ -126,7 +127,7 @@ models.User.objects.filter(id__lte=1)           # 小于等于
 models.User.objects.filter(id=1,name='root')
 dic = {'name': 'xx', 'age__gt': 19}
 models.User.objects.filter(**dic)  # 这里也可以传字典，增删改查都可以加字典
-    
+```   
 ##### 数据新增
 ```
 dic = {"username":'eric',"password":'123'}
