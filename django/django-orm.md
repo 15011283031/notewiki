@@ -1,5 +1,26 @@
-
 ### Django
+
+####django orm示例
+```
+class Business(models.Model):
+    # id
+    caption = models.CharField(max_length=32)
+    code = models.CharField(max_length=32,null=True,default="SA")
+    # 新增列 允许为空null=True 或 default="SA"，就不会提示信息
+
+class Host(models.Model):
+    nid = models.AutoField(primary_key=True)
+    hostname = models.CharField(max_length=32,db_index=True)  # 加上索引
+    ip = models.GenericIPAddressField(protocol="ipv4",db_index=True)
+    port = models.IntegerField()
+    b = models.ForeignKey(to="Business", to_field='id')  # 表中生成列名：b_id
+    # b = models.ForeignKey("Business", to_field='id')   # 外键约束，
+    # b = models.ForeignKey("Business")   #只写表名，默认与那张表主键关联
+
+# 外键：
+#   v = models.Host.objects.filter(nid__gt=0)
+#   v[0].b.caption  #---->  通过.进行跨表
+```
 
 #### Django安装
 ```
