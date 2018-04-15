@@ -20,6 +20,17 @@ class PlayerLists(models.Model):
     Name = models.CharField(max_length=200, default='undifined')
     CreateTime = models.DateTimeField(auto_now_add=True)
 
+d1=DepartmentInfo.objects.get(depart_id=1) #  d1表示UserInfo的外键数据  
+r1=Role.objects.get(role_name=role)        #  r1表示UserInfo的多对多数据  
+u1=UserInfo(user_name=name,user_pwd=password,sex=sex,mobileno=mobile,email=email,depart=d1)  
+u1.save()  
+u1.role.add(r1)  
+u1.save()  
+总结：
+普通数据项：直接插入
+外键数据项：先获取要插入的外键，然后和普通想一起插入
+多对多数据项：获取要插入的多对多数据项，待表中普通数据项和外键数据项save后，使用.add方法加入
+
 ```
 
 
