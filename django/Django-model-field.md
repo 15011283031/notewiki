@@ -1,5 +1,6 @@
 Django model 中的字段解释
 Django 通过 models 实现数据库的创建、修改、删除等操作，本文为模型中一般常用的类型的清单，便于查询和使用：
+
 - https://www.cnblogs.com/kuku0223/p/7815035.html
 
 #### 可选field
