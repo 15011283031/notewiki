@@ -56,3 +56,9 @@ def area_main_building_edit(request, starid, areaid, panelid):
         ,'building_models': building_models,'main_building': main_building}
     return render(request, 'spacegame/area_main_building_edit.html', context)
 ```
+
+## 注意：
+1. 前端html的form表单用POST方法提交的时候，form的后面必须加{% csrf_token %}
+```
+<form id="add_main_building" action="" method="POST">{% csrf_token %}
+```
