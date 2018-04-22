@@ -57,3 +57,37 @@ MariaDB [(none)]>
 CREATE USER 'pig'@'%' IDENTIFIED BY '123456';
 授权us
 GRANT ALL ON *.* TO 'pig'@'%';
+
+### 9. 创建数据库
+```
+create database assforgaia default charset utf8;
+```
+
+### 10. 安装django
+```
+pip3 install Django==2.0.4
+```
+
+安装git
+apt-get install git
+
+定位到目录下
+cd /peter/work/
+初始化仓库
+git init
+复制代码
+git pull https://github.com/15011283031/HRAC.git
+待处理 切换分支
+
+更新ubuntu默认的编译器到python3
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+
+原因是 没有安装:libmysqlclient-dev
+$ sudo apt-get install libmysqlclient-dev
+
+pip3 install mysqlclient
+
+sudo pip install pycrypto
+
+pip install suds-jurko
