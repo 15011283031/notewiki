@@ -1,3 +1,25 @@
+# form规格
+
+## form字段field
+1. 字符串
+- max_length:限制最大长度
+```
+name = forms.CharField(max_length=40）
+```
+2. 日期型
+```
+publish_date = forms.DateField()
+```
+3. 下拉框
+- 下拉框本身与field无关
+```
+    pub = forms.CharField(widget=forms.Select) # 单选
+    pub = forms.CharField(widget=forms.SelectMultiple) # 多选
+    pub = forms.CharField(widget=forms.SelectDateWidget) # 日期选择
+```
+
+# form基本调用
+
 ## 1. 单独建类：forms
 ```
 # 示例：类文件建在AssForHR项目下views目录下spacegame目录下，文件名为spacegame_forms
