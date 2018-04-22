@@ -1,4 +1,3 @@
-
 ### 重装系统后导致远程ubuntu shell无法远程连接ssh
 - Linux SSH命令用了那么久，第一次遇到这样的错误：ECDSA host key "ip地址" for  has changed and you have requested strict checking.记录下方便记忆。
 ```
