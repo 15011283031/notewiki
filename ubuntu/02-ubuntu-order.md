@@ -5,6 +5,21 @@ ssh user_name@127.0.0.1
 ssh ubuntu@182.254.151.112
 ```
 
+### 分支处理
+# 放弃本分支修改
+git stash
+# 切换回master分支
+git checkout master
+# 删除本地分支
+git branch -D ubuntu_dev
+# 获取远程分支更新
+git fetch
+# 获取远程分支
+git checkout -b ubuntu_dev origin/ubuntu_dev
+
+
+
+
 ### 常用操作
 <table>
     <tr>
