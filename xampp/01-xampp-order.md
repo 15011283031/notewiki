@@ -2,22 +2,14 @@
 
 ### 2.1.1. XAMPP安装
 1. 在网站上下载XAMPP For linux 64bit
-
-![img](170408_101601_000001)
-
-2. 通过x-ftp将下载好的xampp传至/home/ubuntu/Downloads下
-
-![img](170408_101601_000002.png)
-
-3. 登录root账户
 ```
-ubuntu@ubuntu:~$ su
-Password: 
-```
-4. 安装XAMPP
-```
-$ chmod +x /home/ubuntu/Downloads/xampp-linux-x64-7.1.1-0-installer.run
-root@ubuntu:/home/ubuntu# /home/ubuntu/Downloads/xampp-linux-x64-7.1.1-0-installer.run
+# 下载xampp:从官网复制lampp下载地址付在-c后面
+$wget -c https://downloadsapachefriends.global.ssl.fastly.net/xampp-files/7.2.4/xampp-linux-x64-7.2.4-0-installer.run
+# 给.run文件权限,跳转到下载的目录下
+$chmod 777 ./xampp-linux-x64-7.2.4-0-installer.run
+# 安装xampp
+$./xampp-linux-x64-7.2.4-0-installer.run
+# 经过配置后默认后安装到opt/lampp
 ```
 
 ### 2.1.2. XAMPP桌面版本的启动
